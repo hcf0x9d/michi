@@ -2,6 +2,7 @@ from flask import Flask
 from datetime import datetime
 
 from app.utils.helpers import markdown_to_html, format_datetime, time_ago, icon_for_mime
+from config import SECRET_KEY
 
 
 def create_app(config_name=None):
@@ -39,7 +40,8 @@ def create_app(config_name=None):
     def inject_global_vars():
         return dict(
             GTM_ID=app.config.get("GTM_ID"),
-            ENVIRONMENT=app.config.get("ENVIRONMENT")
+            ENVIRONMENT=app.config.get("ENVIRONMENT"),
+            SECRET_KEY=app.config.get("SECRET_KEY")
         )
 
     from .routes.public import public_bp

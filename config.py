@@ -20,7 +20,7 @@ SOCIAL_LINKS = [
 ]
 
 # Basic config (can be expanded)
-# ENVIRONMENT = os.environ.get("FLASK_ENV", "development")
+ENVIRONMENT = os.environ.get("FLASK_ENV", "development")
 GTM_ID = os.environ.get("GTM_ID", "")
-# SECRET_KEY = os.environ.get("SECRET_KEY", "dev-key")
+SECRET_KEY = os.environ.get("SECRET_KEY", "dev-key")
 HYGRAPH_API_URL = os.getenv("HYGRAPH_API_URL")
