@@ -4,4 +4,14 @@
     margin-top: -25%;
     display: block;
   }
+
+  @include phone() {
+    display: none;
+  }
+}
+
+.hero-content {
+  @include phone() {
+    padding-bottom: 4rem;
+  }
 }

@@ -187,6 +187,11 @@
     font-size: rem(40);
     padding: rem(4);
     color: $gray-2;
+
+    @include phone () {
+      font-size: rem(32);
+      padding: rem(2);
+    }
   }
   &-content {}
   &-body {}
@@ -206,13 +211,17 @@
     cursor: pointer;
     border-bottom: 2px solid transparent;
 
+    @include phone() {
+      padding: 0.5em 1rem;
+    }
+
     &:hover, &:focus {
-      background: #F5F5F5;
+      background: transparentize($gray-4, 0.95);
       border-bottom: 2px solid #f5f5f5;
     }
 
     &.active {
-      background: #F5F5F5;
+      background: transparentize($gray-4, 0.95);
       border-bottom: 2px solid $blue;
       color: $gray-4;
       font-weight: bold;
@@ -221,10 +230,12 @@
 }
 
 .resource-card {
+  display: block;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-decoration: none;
   color: $gray-4;
+  margin-bottom: 1rem;
 
   &:hover, &:focus {
     color: $blue;

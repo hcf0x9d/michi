@@ -11,6 +11,10 @@ body, html {
   line-height: 110%;
   font-weight: 900;
   margin: 0;
+
+  @include phone () {
+    font-size: rem(47.3);
+  }
 }
 .subtitle {
   font-size: rem(19.2);
@@ -29,6 +33,10 @@ body, html {
     line-height: 110%;
     font-weight: 700;
     margin: 0;
+
+    @include phone () {
+      font-size: rem(39.8);
+    }
   }
 
   &-2 {
@@ -36,6 +44,10 @@ body, html {
     line-height: 110%;
     font-weight: 700;
     margin: 0;
+
+    @include phone () {
+      font-size: rem(33.2);
+    }
   }
 
   &-3 {
