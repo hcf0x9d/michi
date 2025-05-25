@@ -1,0 +1,17 @@
+{% macro button(variant, id, label, element='a', icon=None, cta_url='#') %}
+  {% if element == 'button' %}
+      <button id="{{ id }}" class="button mod-{{ variant }}">
+          {{ label }}
+          {% if icon %}
+              <i class="lni lni-{{ icon }}"></i>
+          {% endif %}
+      </button>
+  {% else %}
+      <a href="{{ cta_url }}" id="{{ id }}" target="{{ target or '_blank' }}" class="button mod-{{ variant }}">
+          {{ label }}
+          {% if icon %}
+              <i class="lni lni-{{ icon }}"></i>
+          {% endif %}
+      </a>
+  {% endif %}
+{% endmacro %}

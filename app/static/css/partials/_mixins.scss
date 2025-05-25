@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+@mixin phone {
+  @media (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$lg-width}) and (max-width: #{$xl-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-hi {
+  @media (min-width: #{$xl-width}) and (max-width: #{$hd-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin hd {
+  @media (min-width: #{$hd-width}) {
+    @content;
+  }
+}
+
+@mixin gradient-background ( $start-color, $end-color) {
+  background: $start-color; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, $start-color 0%, $end-color 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, $start-color 0%,$end-color 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, $start-color 0%,$end-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+// Shadow Effect
+@mixin shadow ( $shadow-color, $shadow-opacity, $shadow-distance ) {
+  box-shadow: 0 #{$shadow-distance
+  }px #{$shadow-distance}px -#{$shadow-distance / 3}px transparentize($shadow-color, $shadow-opacity), 0 #{$shadow-distance / 4 }px #{$shadow-distance / 2}px transparentize($shadow-color, $shadow-opacity);
+}
+
+// Glow Effect
+@mixin glow ( $glow-color, $glow-opacity, $glow-distance ) {
+  box-shadow: 0 #{$glow-distance / 7}px #{$glow-distance}px transparentize($glow-color, $glow-opacity);
+}
+
+// Convert pixels to EMs or REMs
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}

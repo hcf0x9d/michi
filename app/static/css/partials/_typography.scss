@@ -1,0 +1,78 @@
+body, html {
+  font-family: 'Inter', sans-serif;
+  line-height: 160%;
+  color: $gray-4;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  font-size: rem(57.3);
+  line-height: 110%;
+  font-weight: 900;
+  margin: 0;
+}
+.subtitle {
+  font-size: rem(19.2);
+  font-weight: 700;
+  margin: 0;
+}
+
+.kicker {
+  margin: 0;
+  font-size: rem(19.2);
+  font-weight: 400;
+}
+.heading {
+  &-1 {
+    font-size: rem(47.8);
+    line-height: 110%;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &-2 {
+    font-size: rem(39.8);
+    line-height: 110%;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &-3 {
+    font-size: rem(33.2);
+    line-height: 110%;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &-4 {
+    font-size: rem(27.6);
+    line-height: 110%;
+    font-weight: 700;
+    margin: 0;
+  }
+  &-5 {
+    font-size: rem(19.2);
+    line-height: 110%;
+    font-weight: 700;
+    margin: 0;
+  }
+  &-6 {
+    font-size: 1rem;
+    line-height: 110%;
+    font-weight: 700;
+    margin: 0;
+  }
+
+}
+
+.small {
+  font-size: rem(13.3);;
+}
+.extra-small {
+  font-size: rem(11.1);
+}
+
+.mod-center {
+  text-align: center;
+}

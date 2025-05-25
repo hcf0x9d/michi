@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% from "atoms/rtb.atom.html" import rtb %}
+{% from "atoms/button.atom.html" import button %}
+
+{% block title %}Digital Strategy & UX for Ministries & Small Teams{% endblock %}
+
+{% block content %}
+    <header class="section pt-16 mb-16" style="border-bottom: 1px solid #eee;">
+        <div class="container">
+            <div class="hero-image col-sm-6 col-sm-push-6">
+                <img class="" src="{{ url_for('static', filename='images/JasonFukura-Knocked.png') }}" alt="Jason Fukura, CUA">
+
+            </div>
+            <div class="hero-content col-sm-6 col-sm-pull-6">
+                <h2 class="kicker gray-3">Guidance for Purposeful Work</h2>
+                <h1 class="title">Thoughtful design and strategy for teams that serve.</h1>
+                <h2 class="subtitle mb-4 mt-4">Helping ministries and small teams find digital clarity through thoughtful design and strategy.</h2>
+                {{ button('primary', 'hero-cta-primary', 'Schedule a call', icon='arrow-right', cta_url=booking_link) }}
+                {{ button('secondary', 'hero-cta-secondary', 'Get the guide', icon='cloud-download', cta_url=flagship_resource) }}
+            </div>
+        </div>
+    </header>
+    <section class="section pt-8 pb-8">
+        {% set rtbs = [
+          {
+            "title": "Design & Strategy",
+            "body": "Intentional design that ensures your mission is consistently represented, whether launching a new website or improving the existing one.",
+            "icon": "<i class='la la-lightbulb'></i>",
+            "class": "col-sm-3"
+          },
+          {
+            "title": "Digital Tools & Systems",
+            "body": "I simplify the tech—helping you choose and set up the tools that fit your needs, from email to site builders to digital forms.",
+            "icon": "<i class='la la-cog'></i>",
+            "class": "col-sm-3"
+          },
+          {
+            "title": "Education & Resources",
+            "body": "Practical guides, templates, and courses built for non-tech teams who still want to do things well—and feel confident doing it.",
+            "icon": "<i class='la la-cog'></i>",
+            "class": "col-sm-3"
+          },
+          {
+            "title": "Custom Guidance",
+            "body": "Some challenges don’t fit a template. I offer light-touch consulting to help you navigate decisions with clarity and confidence.",
+            "icon": "<i class='la la-cog'></i>",
+            "class": "col-sm-3"
+          }
+        ] %}
+        <div class="container">
+            <div class="col-sm-12">
+                <h2 class="heading-1 mod-center">Support That Scales</h2>
+            </div>
+            <div class="rtb-list col-sm-12 row pt-16">
+            {% for r in rtbs %}
+                {{ rtb(r.title, r.body, r.icon, r.cta_url, r.cta_text, r.class) }}
+            {% endfor %}
+            </div>
+            <div class="col-sm-12 mod-center pt-8">
+                <h4 class="heading-5 mod-center mb-4">Ready to learn more?</h4>
+                {{ button('secondary', 'anchor-cta', 'See services', icon='arrow-right', cta_url=url_for('public.services')) }}
+            </div>
+        </div>
+    </section>
+    <section class="section mod-blob pt-8 pb-8">
+        <div class="container mod-flex">
+            <div class="col-sm-6">
+                <h2 class="kicker gray-3">Mission First</h2>
+                <h1 class="heading-1">Built for the work that matters most</h1>
+                <p>You shouldn't need a marketing degree to serve your community effectively. Yet, cluttered websites and confusing tools can hinder your efforts.</p>
+                <p>A good digital strategy should inspire confidence and clarity, allowing even small teams to shine online with ease.</p>
+            </div>
+            <div class="col-sm-6 as-center">
+                <h2 class="heading-5 mb-4">With the right guidance, you can:</h2>
+                <ul class="iconList">
+                    <li class="iconList-item col-sm-6"><i class="lni lni-hammer-2"></i>Choose the tools that work for you and your goals.</li>
+                    <li class="iconList-item col-sm-6"><i class="lni lni-bulb-2"></i>Focus on your mission, not menu settings.</li>
+                    <li class="iconList-item col-sm-6"><i class="lni lni-pencil-1"></i>Write confidently, even if you're not a writer.</li>
+                    <li class="iconList-item col-sm-6"><i class="lni lni-crane-4"></i>Launch a website that reflects your community.</li>
+                </ul>
+            </div>
+        </div>
+        <img class="background-blob" src="{{ url_for('static', filename='images/blob-right.png') }}" alt="">
+    </section>
+    <section class="section pt-8 pb-16">
+        <div class="container">
+            <div class="col-sm-10 col-sm-push-1 mod-flex">
+                <aside class="col-sm-5 asidePhoto-wrap">
+                    <img class="asidePhoto" src="{{ url_for('static', filename='images/MissionDrivenGuidetoDigitalStrategyAd@1000w.png') }}">
+                </aside>
+                <div class="col-sm-7 pt-16 pb-16">
+                    <h2 class="kicker">Take Action</h2>
+                    <h1 class="heading-1">Start with clarity</h1>
+                    <p>Whether you're rethinking your website, overwhelmed by platforms, or just tired of duct-taping digital solutions together—you're not alone.</p>
+                    <p><b>Start with a free resource, or reach out for a conversation.</b> No pressure. Just help.</p>
+                    {{ button('primary', 'hero-cta-primary', 'Schedule a call', icon='arrow-right', cta_url=booking_link) }}
+                    {{ button('secondary', 'hero-cta-secondary', 'Get the guide', icon='cloud-download', cta_url=flagship_resource) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

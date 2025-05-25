@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% from "atoms/offering.atom.html" import offering %}
+{% from "atoms/button.atom.html" import button %}
+
+{% block title %}Digital Strategy & UX Services for Ministries & Startups{% endblock %}
+
+{% block content %}
+    <header class="section mod-blob pt-16 pb-16">
+        <div class="container">
+            <div class="hero-content col-sm-8">
+                <h2 class="kicker gray-3">Services</h2>
+                <h1 class="title">Practical support for your digital presence.</h1>
+                <h2 class="subtitle mb-4 mt-4">Whether you're building from scratch or untangling what's already there, I offer design, strategy, and tools that meet you where you are—so you can focus on the work that matters most.</h2>
+            </div>
+        </div>
+        <img class="background-blob" src="{{ url_for('static', filename='images/blob-right.png') }}" alt="">
+    </header>
+    <section class="section pt-8 pb-8">
+        {% set offerings = [
+          {
+            "title": "Education & Templates",
+            "subtitle": "Resources built for the rest of us.",
+            "body": "I create free and paid guides, checklists, and courses that help small teams and ministries navigate digital spaces—without needing to become designers, strategists, or marketers.",
+            "icon": "cloud-download",
+            "cta_text": "Explore resources",
+            "cta_url": "/resources"
+          },
+          {
+            "title": "Tools & Setup Support",
+            "subtitle": "Tech made approachable.",
+            "body": "Confused by platforms? I’ll help you choose and set up tools that make sense—like email, website builders, content templates, forms, or anything else holding you back from launching with confidence.",
+            "icon": "select-cursor-1",
+            "cta_text": "Get the guide",
+            "cta_url": "/resources"
+          },
+          {
+            "title": "Design & Digital Strategy",
+            "subtitle": "Clear, consistent, and built to serve your mission.",
+            "body": "Whether you need a simple site, help organizing your content, or just someone to untangle the mess of platforms you're juggling, I bring calm clarity to your digital presence.",
+            "icon": "signs-post-2",
+            "cta_text": "Let’s talk",
+            "cta_url": "/contact"
+          },
+          {
+            "title": "Custom Projects & Support",
+            "subtitle": "Every team is different. Support should be too.",
+            "body": "If your project doesn’t fit neatly into a category, I’m happy to scope something custom with you—whether that’s a launch plan, a long-overdue redesign, or just some time to talk it through.",
+            "icon": "comment-1-text",
+            "cta_text": "Contact me",
+            "cta_url": "/contact"
+          },
+        ] %}
+        <div class="container">
+            <div class="col-sm-12">
+                <h2 class="heading-1 mod-center">Core Offerings</h2>
+            </div>
+            <div class="rtb-list col-sm-12 row pt-8">
+            {% for o in offerings %}
+                {{ offering(o.title, o.subtitle, o.body, o.icon, o.cta_url, o.cta_text) }}
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+{#    <section class="section pt-8 pb-8">#}
+{#        <div class="container mod-flex">#}
+{#            <div class="col-sm-6 asidePhoto-wrap">#}
+{#                <img class="asidePhoto" src="https://picsum.photos/500/500?grayscale" alt=""/>#}
+{#            </div>#}
+{#            <div class="col-sm-6 pt-16 pb-16">#}
+{#                <h2 class="kicker gray-3">Mission First</h2>#}
+{#                <h1 class="heading-1">Built for the work that matters most</h1>#}
+{#                <p>You shouldn't need a marketing degree to serve your community effectively. Yet, cluttered websites and confusing tools can hinder your efforts.</p>#}
+{#                <p>A good digital strategy should inspire confidence and clarity, allowing even small teams to shine online with ease.</p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+    <section class="section pt-8 pb-16">
+        <div class="container">
+            <div class="col-sm-10 col-sm-push-1 mod-flex">
+                <aside class="col-sm-5 col-sm-push-7 asidePhoto-wrap">
+                    <img class="asidePhoto" src="{{ url_for('static', filename='images/MissionDrivenGuidetoDigitalStrategyAd@1000w.png') }}">
+                </aside>
+                <div class="col-sm-7 col-sm-pull-5 pt-16 pb-16">
+                    <h2 class="kicker">Take Action</h2>
+                    <h1 class="heading-1">Not sure where to start?</h1>
+                    <p>Whether you're a solo pastor needing email help, or a nonprofit ready to launch a new site, I’ll help you build a digital presence that fits your mission and your budget.</p>
+                    <p><b>Let's find the right path forward—schedule a free intro call.</b></p>
+                    {{ button('primary', 'hero-cta-primary', 'Schedule a call', icon='arrow-right', cta_url=booking_link) }}
+                    {{ button('secondary', 'hero-cta-secondary', 'Get the guide', icon='cloud-download', cta_url=flagship_resource) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,19 @@
+.gray {
+  &-1 {color: $gray-1}
+  &-2 {color: $gray-2}
+  &-3 {color: $gray-3}
+  &-4 {color: $gray-4}
+}
+
+.blue {color: $blue;}
+.magenta {color: $magenta;}
+
+.bg-gray {
+  &-1 {background-color: $gray-1}
+  &-2 {background-color: $gray-2}
+  &-3 {background-color: $gray-3}
+  &-4 {background-color: $gray-4}
+}
+
+.bg-blue {background-color: $blue;}
+.bg-magenta {background-color: $magenta;}

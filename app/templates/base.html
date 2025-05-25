@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | Jason Fukura</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='/site.webmanifest')}}">
+
+    {% block meta_block %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/style.css')}}" >
+
+    {% if ENVIRONMENT == "production" %}
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ GTM_ID }}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '{{ GTM_ID }}');
+        </script>
+
+        <!-- End Google Tag Manager -->
+    {% endif %}
+</head>
+
+<body>
+    {% if ENVIRONMENT == "production" %}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ GTM_ID }}"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+    {% include 'organisms/header.part.html' %}
+    {% block content %}{% endblock %}
+    {% include 'organisms/footer.part.html' %}
+</body>

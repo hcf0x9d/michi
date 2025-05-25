@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% from "atoms/rtb.atom.html" import rtb %}
+{% from "atoms/button.atom.html" import button %}
+
+{% block title %}Strategy Support for Small Teams{% endblock %}
+
+{% block content %}
+    <header class="section mod-blob pt-16 pb-16">
+        <div class="container">
+            <div class="hero-content col-sm-6">
+                <h2 class="kicker gray-3">Connect</h2>
+                <h1 class="title">Let’s Talk.</h1>
+                <h2 class="subtitle mb-4 mt-4">Whether you’re just getting started or need help untangling your digital presence, I’d love to hear from you.</h2>
+            </div>
+        </div>
+        <img class="background-blob" src="{{ url_for('static', filename='images/blob-right.png') }}" alt="">
+    </header>
+    <section class="pt-8 pb-8 container">
+        <div class="col-sm-7">
+            <script src="https://js-na2.hsforms.net/forms/embed/242730774.js" defer></script>
+            <div class="hs-form-frame" data-region="na2" data-form-id="7822dd1b-0230-4ef0-92c6-db369b6e1221" data-portal-id="242730774"></div>
+        </div>
+        <div class="col-sm-5">
+            <p>I read every message personally. I’ll get back to you within 1–2 business days. If you’ve reached out
+                about a project or consulting need, I may follow up with a few clarifying questions or a link to
+                schedule a call.</p>
+        </div>
+    </section>
+{% endblock %}

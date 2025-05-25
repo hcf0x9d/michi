@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% from "atoms/rtb.atom.html" import rtb %}
+{% from "atoms/button.atom.html" import button %}
+
+{% block title %}Get to Know Me{% endblock %}
+
+{% block content %}
+    <header class="section pt-16 pb-16">
+        <div class="container">
+            <div class="hero-content col-sm-8">
+                <h2 class="kicker gray-3">Mission Focus</h2>
+                <h1 class="title">Design meets calling.</h1>
+                <h2 class="subtitle mb-4">I'm here to make tech less overwhelming and more aligned with your mission.</h2>
+            </div>
+        </div>
+    </header>
+    <section class="section mod-blob pt-8 pb-8">
+        <div class="container mod-flex">
+            <div class="col-sm-6">
+                <h1 class="heading-2">I have chosen to focus on helping ministries and small teams with their tech.</h1>
+            </div>
+            <div class="col-sm-6">
+                <p class="mt-0">I’ve seen too many small teams with big hearts get tripped up by technology. Messy websites, unclear
+                    messaging, expensive tools—these things shouldn’t get in the way of the work you’re really called to
+                    do.</p>
+                <p>After years of working in design, development, and marketing strategy—often as the solo UX voice in a
+                    room—I realized my passion wasn’t just in building better products. It was in <b>helping people do
+                    meaningful work more clearly and confidently</b>.</p>
+                <p>That’s why I’ve shifted my focus to <b>supporting ministries, nonprofits, and small startups</b>: the
+                    teams doing the most with the least. You shouldn’t need a degree in digital strategy to show up well
+                    online.</p>
+            </div>
+        </div>
+        <img class="background-blob mod-left" src="{{ url_for('static', filename='images/blob-right.png') }}" alt="">
+    </section>
+    <section class="section pt-8 pb-8">
+        {% set rtbs = [
+          {
+            "title": "Design With a Purpose",
+            "body": "Every color, word, and button should help you communicate your calling with clarity.",
+            "class": "col-sm-4"
+          },
+          {
+            "title": "Ethical Design & Systems Thinking",
+            "body": "I believe in starting small, testing early, and building systems that serve the mission (not the other way around).",
+            "class": "col-sm-4"
+          },
+          {
+            "title": "Faith Aligned Strategy",
+            "body": "I respect the spiritual dimension of your work. My goal isn’t just technical support—it’s to remove digital friction so your message can shine.",
+            "class": "col-sm-4"
+          }
+        ] %}
+        <div class="container">
+            <div class="col-sm-12">
+                <h2 class="heading-2 mod-center">Practical. Scalable. Faith-informed.</h2>
+            </div>
+            <div class="rtb-list col-sm-12 row pt-16">
+            {% for r in rtbs %}
+                {{ rtb(r.title, r.body, r.icon, r.cta_url, r.cta_text, r.class) }}
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section pt-8 pb-8">
+        <div class="container mod-flex">
+            <div class="col-sm-6 asidePhoto-wrap">
+                <img class="asidePhoto" src="{{ url_for('static', filename='images/JasonFukura-Color.png') }}" alt="Jason Fukura, CUA"/>
+            </div>
+            <div class="col-sm-6 pt-16 pb-16">
+                <h2 class="kicker gray-3">Lived Experience</h2>
+                <h1 class="heading-1">About Me</h1>
+                <h2 class="heading-5">UX Leader • Educator • Quiet Strategist</h2>
+                <p>I’ve spent the last decade helping small companies and mission-driven teams build better
+                    experiences—from intuitive app flows and marketing funnels to full design systems and scalable
+                    platforms. I’ve worked as a one-person UX department, led design ops at fast-growing startups, and
+                    mentored designers to grow their craft with confidence.</p>
+                <p>I am happiest when I’m blending systems and soul—designing thoughtful digital strategies that serve
+                    people, not just pixels.</p>
+                <p><b>I believe:</b></p>
+                <ul>
+                    <li>Design should feel like peace, not pressure</li>
+                    <li>You don’t need more tools—you need the right ones</li>
+                    <li>Good work grows from small steps taken faithfully</li>
+                    <li>There’s beauty in clarity</li>
+                    <li>Most digital problems are people problems in disguise</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-8 pb-16">
+        <div class="container">
+            <div class="col-sm-10 col-sm-push-1 mod-flex">
+                <aside class="col-sm-5 col-sm-push-7 asidePhoto-wrap">
+                    <img class="asidePhoto" src="{{ url_for('static', filename='images/MissionDrivenGuidetoDigitalStrategyAd@1000w.png') }}">
+                </aside>
+                <div class="col-sm-7 col-sm-pull-5 pt-16 pb-16">
+                    <h2 class="kicker">Take Action</h2>
+                    <h1 class="heading-1">Start with clarity</h1>
+                    <p>You don’t have to figure everything out at once. Start with a free guide or reach out for a no-pressure call to talk through where you’re stuck and what’s possible.</p>
+                    {{ button('primary', 'hero-cta-primary', 'Schedule a call', icon='arrow-right', cta_url=booking_link) }}
+                    {{ button('secondary', 'hero-cta-secondary', 'Get the guide', icon='cloud-download', cta_url=flagship_resource) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

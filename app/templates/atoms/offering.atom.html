@@ -1,0 +1,15 @@
+{% from "atoms/button.atom.html" import button %}
+
+{% macro offering(title, subtitle, body, icon=None, cta_url=None, cta_text=None, class='col-sm-6') %}
+  <div class="offering-block {{ class }}">
+    {% if icon %}<i class="offering-icon lni lni-{{ icon }}"></i>{% endif %}
+    <div class="offering-content">
+        <h3 class="heading-4 mb-1">{{ title }}</h3>
+        <h4 class="heading-5">{{ subtitle }}</h4>
+        <p class="offering-body mt-2">{{ body }}</p>
+{#        {% if cta_url and cta_text %}#}
+{#            {{ button(variant='secondary', id='', label=cta_text, icon='arrow-right', cta_url=cta_url) }}#}
+{#        {% endif %}#}
+    </div>
+  </div>
+{% endmacro %}

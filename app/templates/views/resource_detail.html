@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% from "atoms/rtb.atom.html" import rtb %}
+{% from "atoms/button.atom.html" import button %}
+
+{% block title %}Free Guides, Templates & Tools for Mission-Driven Teams{% endblock %}
+
+{% block content %}
+    <header class="section mod-blob pt-16 pb-8">
+        <div class="container">
+            <div class="hero-content col-sm-7 col-sm-offset-3">
+                <h2 class="kicker gray-3">{{ resource.tag }}</h2>
+                <h1 class="title">{{ resource.title }}</h1>
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container">
+            <div class="col-sm-9 col-sm-offset-2">
+                <div class="keyImage-wrapper">
+                    <img src="{{ resource.keyImage.url }}" alt="" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="article-meta-wrapper">
+                    <p class="meta"><i class="lni lni-user-4"></i> {{ resource.createdBy.name }}</p>
+                    <p class="meta"><i class="lni lni-calendar-days"></i> Published {{ resource.publishTime | time_ago }}</p>
+                </div>
+                <div class="pullQuote-wrapper">
+                    {{ resource.pullQuote | markdown }}
+                </div>
+            </div>
+            <div class="col-sm-7 pb-16">
+                {{ resource.content | markdown }}
+                {% if resource.file %}
+                    <a class="col-sm-12 row downloadBox" href="{{ resource.file.url }}" target="_blank">
+                        <i class="lni {{ resource.file.mimeType | icon }}" title="{{ resource.file.fileName }}"></i>
+                        <span class="details">
+                            <h3 class="download-heading">Download <span>{{ resource.file.fileName }}</span></h3>
+                        </span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{#    <section class="section pt-8 pb-16">#}
+{#        <div class="container">#}
+{#            <div class="col-sm-10 col-sm-push-1 mod-flex">#}
+{#                <aside class="col-sm-5 col-sm-push-7 asidePhoto-wrap">#}
+{#                    <img class="asidePhoto" src="https://picsum.photos/500/500?grayscale">#}
+{#                </aside>#}
+{#                <div class="col-sm-7 col-sm-pull-5 pt-16 pb-16">#}
+{#                    <h2 class="kicker">Take Action</h2>#}
+{#                    <h1 class="heading-1">Still not sure?</h1>#}
+{#                    <p>You don’t have to figure everything out at once. Start with a free guide or reach out for a no-pressure call to talk through where you’re stuck and what’s possible.</p>#}
+{#                    {{ button('primary', 'hero-cta-primary', 'Schedule a call', icon='arrow-right', cta_url='#') }}#}
+{#                    {{ button('secondary', 'hero-cta-secondary', 'Get the guide', icon='cloud-download', cta_url=flagship_resource) }}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{% endblock %}
