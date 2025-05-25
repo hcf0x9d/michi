@@ -7,7 +7,7 @@ BOOKING_LINK = "https://calendly.com/jason-fukura/introduction-call"
 NAV_LINKS = [
     {"label": "Home", "endpoint": "public.home"},
     {"label": "Services", "endpoint": "public.services"},
-    # {"label": "Resources", "endpoint": "public.resources"},
+    {"label": "Resources", "endpoint": "public.resources"},
     {"label": "About", "endpoint": "public.about"},
     # {"label": "Contact", "endpoint": "public.contact"},
 ]
