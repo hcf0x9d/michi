@@ -17565,6 +17565,10 @@ body, html {
     .thumbnail-wrap .resource-badge-webinar {
       background-color: #fdcb6e; }
 
+.rtb-icon {
+  font-size: 2.5rem;
+  padding: 0.5rem 0; }
+
 .mod-blob {
   position: relative;
   overflow-x: clip; }

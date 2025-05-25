@@ -1,6 +1,6 @@
 {% macro rtb(title, body, icon=None, cta_url=None, cta_text=None, class='col-sm-4') %}
   <div class="rtb-block {{ class }}">
-    {% if icon %}<div class="rtb-icon">{{ icon|safe }}</div>{% endif %}
+    {% if icon %}<div class="rtb-icon gray-2">{{ icon|safe }}</div>{% endif %}
     <h3 class="heading-5">{{ title }}</h3>
     <p class="rtb-body">{{ body }}</p>
     {% if cta_url and cta_text %}
