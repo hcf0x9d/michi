@@ -55,6 +55,31 @@
         ]
         {#document.addEventListener("DOMContentLoaded", () => {#}
         const manager = new ResourceManager(resourceList, resourceTypes, "#resources-container");
-        {#});#}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "url": "https://jason.fukura.design/resources",
+      "name": "Free Guides, Templates & Tools",
+      "description": "Guides, checklists, blog posts, and courses designed to help small teams and ministries build a digital presence with purpose—not overwhelm.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Jason Fukura",
+        "url": "https://jason.fukura.design"
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "The Mission-Driven Guide to Digital Strategy",
+          "url": "https://resources.fukura.design/mission-driven-guide-to-digital-strategy",
+          "description": "A free, practical guide for ministries and small teams to build a digital strategy that aligns with their mission.",
+          "author": {
+            "@type": "Person",
+            "name": "Jason Fukura"
+          }
+        }
+      ]
+    }
     </script>
 {% endblock %}

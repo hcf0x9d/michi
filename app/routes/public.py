@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 
 from flask import Blueprint, render_template, abort, url_for, Response
@@ -25,9 +26,20 @@ def resources():
 @public_bp.route("/resources/<slug>")
 def resource_detail(slug):
     resource = fetch_resource_by_slug(slug)
+    json_ld = {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "headline": resource['title'],
+        "datePublished": resource['publishTime'],
+        "author": {
+            "@type": "Person",
+            "name": resource['createdBy']['name']
+        },
+        "url": url_for('public.resource_detail', slug=resource['slug'], _external=True),
+    }
     if not resource:
         abort(404)
-    return render_template("views/resource_detail.html", resource=resource)
+    return render_template("views/resource_detail.html", resource=resource, json_ld_data=json.dumps(json_ld))
 
 @public_bp.route("/about")
 def about():
