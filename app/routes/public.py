@@ -31,6 +31,7 @@ def resource_detail(slug):
         "@type": "CreativeWork",
         "headline": resource['title'],
         "datePublished": resource['publishTime'],
+        "image": resource['keyImage'],
         "author": {
             "@type": "Person",
             "name": resource['createdBy']['name']
