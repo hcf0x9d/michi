@@ -30,6 +30,7 @@ def resource_detail(slug):
         "@context": "https://schema.org",
         "@type": "CreativeWork",
         "headline": resource['title'],
+        "description": resource['summary'],
         "datePublished": resource['publishTime'],
         "image": resource['keyImage']['url'],
         "author": {
