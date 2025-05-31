@@ -303,3 +303,12 @@
     padding: 0.5rem 0;
   }
 }
+
+.ctaBox {
+  padding: 2rem;
+  background: transparentize($blue, 0.9);
+  border-radius: 8px;
+
+  & h1 {
+    margin-bottom: 1rem;}
+}

@@ -17574,6 +17574,13 @@ body, html {
   font-size: 2.5rem;
   padding: 0.5rem 0; }
 
+.ctaBox {
+  padding: 2rem;
+  background: rgba(38, 118, 179, 0.1);
+  border-radius: 8px; }
+  .ctaBox h1 {
+    margin-bottom: 1rem; }
+
 .mod-blob {
   position: relative;
   overflow-x: clip; }

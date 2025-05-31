@@ -42,26 +42,17 @@
                         </span>
                     </a>
                 {% endif %}
+                {% if resource.ctaHeadline %}
+                    <div class="col-sm-12 row ctaBox">
+                        <h1 class="heading-4">{{ resource.ctaHeadline }}</h1>
+                        <a class="button mod-primary" href="{{ resource.ctaLink }}" target="_blank">Go now</a>
+                    </div>
+
+                {% endif %}
             </div>
         </div>
     </section>
     <script type="application/ld+json">
     {{ json_ld_data | safe }}
     </script>
-{#    <section class="section pt-8 pb-16">#}
-{#        <div class="container">#}
-{#            <div class="col-sm-10 col-sm-push-1 mod-flex">#}
-{#                <aside class="col-sm-5 col-sm-push-7 asidePhoto-wrap">#}
-{#                    <img class="asidePhoto" src="https://picsum.photos/500/500?grayscale">#}
-{#                </aside>#}
-{#                <div class="col-sm-7 col-sm-pull-5 pt-16 pb-16">#}
-{#                    <h2 class="kicker">Take Action</h2>#}
-{#                    <h1 class="heading-1">Still not sure?</h1>#}
-{#                    <p>You don’t have to figure everything out at once. Start with a free guide or reach out for a no-pressure call to talk through where you’re stuck and what’s possible.</p>#}
-{#                    {{ button('primary', 'hero-cta-primary', 'Schedule a call', icon='arrow-right', cta_url='#') }}#}
-{#                    {{ button('secondary', 'hero-cta-secondary', 'Get the guide', icon='cloud-download', cta_url=flagship_resource) }}#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
 {% endblock %}

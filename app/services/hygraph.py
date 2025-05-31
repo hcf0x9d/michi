@@ -7,7 +7,7 @@ def fetch_resources():
     """Fetch all Resource entries from Hygraph"""
     query = """
     {
-      resources(orderBy: publishedAt_DESC) {
+      resources(orderBy: publishTime_DESC) {
         title
         slug
         thumbnail {
@@ -58,6 +58,8 @@ def fetch_resource_by_slug(slug):
           mimeType
           fileName
         }
+        ctaHeadline
+        ctaLink
       }
     }
     """
