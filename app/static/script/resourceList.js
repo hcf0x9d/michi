@@ -40,7 +40,7 @@ class ResourceManager {
   if (oldList) oldList.remove();
 
   const list = document.createElement("div");
-  list.classList.add("resource-list");
+  list.className = "resource-list";
 
   const filtered = this.getFilteredResources();
 

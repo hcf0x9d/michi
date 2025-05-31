@@ -17519,6 +17519,11 @@ body, html {
       color: #181818;
       font-weight: bold; }
 
+.resource-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+
 .resource-card {
   display: block;
   padding-top: 1rem;
