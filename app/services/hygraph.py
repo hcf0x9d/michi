@@ -59,6 +59,8 @@ def fetch_resource_by_slug(slug):
           fileName
         }
         ctaHeadline
+        ctaBody
+        ctaLabel
         ctaLink
       }
     }

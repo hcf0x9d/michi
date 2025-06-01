@@ -45,7 +45,8 @@
                 {% if resource.ctaHeadline %}
                     <div class="col-sm-12 row ctaBox">
                         <h1 class="heading-4">{{ resource.ctaHeadline }}</h1>
-                        <a class="button mod-primary" href="{{ resource.ctaLink }}" target="_blank">Go now</a>
+                        <p>{{ resource.ctaBody }}</p>
+                        <a class="button mod-primary" href="{{ resource.ctaLink }}" target="_blank">{{ resource.ctaLabel }}</a>
                     </div>
 
                 {% endif %}
